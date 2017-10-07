@@ -10,13 +10,24 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
+	<div id="mySidenav" class="mmenu">
+		<div class="mmenu__wrapper">
+			<a class="mmenu__clouse" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+			<a class="mmenu__item" href="#" onclick="closeNav()">About</a>
+			<a class="mmenu__item" href="#" onclick="closeNav()">Services</a>
+			<a class="mmenu__item" href="#" onclick="closeNav()">Clients</a>
+			<a class="mmenu__item" href="#" onclick="closeNav()">Contact</a>
+		</div>
+	</div>
+
 	<header>
 		<?php $args = array( 
 			'theme_location' => 'top', 
 			'container'=> 'nav', 
-			'menu_class' => 'bottom-menu', 
-			'menu_id' => 'bottom-nav',
-			);
+			'menu_class' => 'top-menu', 
+			'menu_id' => 'top-nav',
+		);
 		wp_nav_menu($args); 
 		?>
 	</header>

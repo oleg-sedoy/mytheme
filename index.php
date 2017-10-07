@@ -1,5 +1,6 @@
 <?php get_header(); ?> 
 <h1>Olegmes50</h1>
+<p onclick="openNav()">Меню</p>
 <picture>
 <source srcset="wp-content/themes/olegmes50/img/IMG_1716-320.jpg" media="(max-width: 320px)">
 <source srcset="wp-content/themes/olegmes50/img/IMG_1716-480.jpg" media="(max-width: 480px)">
