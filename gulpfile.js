@@ -11,10 +11,19 @@
  */
 	const
 		proxy ={
-			name				: 'mytheme/'
-		}
+			name: 'mytheme/'
+		},
 	  dir = {
-	    assets         : 'assets/'
+	    assets: 'assets/',
+	    sass: 'assets/sass/**/*.sass',
+	    img: 'assets/img/**/*.*',
+	    fonts: 'assets/fonts/**/*.woff'
+	  },
+	  watch = {
+	  	sass: 'assets/sass/**/*.sass',
+	  	js: 'assets/js/main.js',
+	  	php: '**/*.php',
+	  	img: 'assets/img/**/*.*'
 	  }
 
 /*
@@ -63,7 +72,7 @@ gulp.task('browser-sync', function() {
  * Create sass to css
  */
 gulp.task('sass', function() {
-	return gulp.src(dir.assets+'sass/**/*.sass')
+	return gulp.src(dir.sass)
 	.pipe(sourcemaps.init())
 	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions']))
@@ -77,7 +86,7 @@ gulp.task('sass', function() {
  * Setting imageresize
  */
  gulp.task('images', function() {
- 	return gulp.src(dir.assets+'img/*.{png,jpg,jpeg}')
+ 	return gulp.src(dir.img)
  	.pipe(jimp({
  		sizes: [
  		{"suffix": "960", "width": 960},
@@ -98,29 +107,22 @@ gulp.task('sass', function() {
  	.pipe(gulp.dest('img/'));
  });
 
-
 /*
  * Copy fonts to folder themes
  */
 gulp.task('copyfonts', function() {
-
-	var buildFonts = gulp.src([
-		'assets/fonts/**/*',
-		]).pipe(gulp.dest('fonts/'));
-
+	var buildFonts = gulp.src(dir.fonts)
+	.pipe(gulp.dest('fonts/'));
 });
-
-// gulp.task('clear', function (done) {
-//     return cache.clearAll(done);
-// });
 
 /*
  * Watch setting
  */
-gulp.task('watch', ['sass','scripts','browser-sync'], function() {
-	gulp.watch(['assets/sass/**/*.sass', 'assets/libs/bootstrap-sass/assets/stylesheets/_bootstrap.scss'], ['sass']);
-	gulp.watch('assets/js/main.js', ['scripts']);
-	gulp.watch('*.php', browserSync.reload);
+gulp.task('watch', ['sass','scripts','images','browser-sync'], function() {
+	gulp.watch(watch.sass, ['sass']);
+	gulp.watch(watch.js, ['scripts']);
+	gulp.watch(watch.img, ['images']);
+	gulp.watch(watch.php, browserSync.reload);
 });
 
 gulp.task('default', ['watch', 'copyfonts']);

@@ -5,16 +5,12 @@
  * Version: 1.0
  */
 
-// Поключение шрифтов
 @import "fonts"
 
-// Подключение библиотек
 @import "libs"
 
-// Подключение переменных
 @import "vars"
 
-// Подключение flex
 @import "flex"
 
 a
@@ -25,13 +21,17 @@ body
 	margin: 0
 	padding: 0
 	font-family: $default-font 
-	color: $color-accent
+	color: $color-font
 
 img
 	width: 100%
 	height: auto
 
+h1
+	font-family: $font-test
+	font-size: 50px
+
 //
-// Всегда подключается в конце
+// include only in end
 //
 @import "media"
