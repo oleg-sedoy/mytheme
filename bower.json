@@ -1,0 +1,21 @@
+{
+  "name": "olegmes50",
+  "description": "My template for WP",
+  "dependencies": {},
+  "devDependencies": {
+    "jQuery": "jq#^3.2.1"
+  },
+  "authors": [
+    "Oleg Meshcheryakov <79021741717@yandex.ru>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "assets/library/"
+  ],
+  "private": true
+}
