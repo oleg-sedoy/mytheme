@@ -41,7 +41,18 @@
  rename          		 = require("gulp-rename"),
  cssnano         		 = require('gulp-cssnano'),
  sourcemaps      		 = require('gulp-sourcemaps'),
+ plumber 						 = require('gulp-plumber'),
+ notify 						 = require('gulp-notify'),
  cache           		 = require('gulp-cache');
+
+/*
+ * Plumber confiriration
+ */
+ var plumberErrorHandler = { errorHandler: notify.onError({
+ 	title: 'Gulp',
+ 	message: 'Error: <%= error.message %>'
+ })
+};
 
 /*
  * Create script
@@ -50,6 +61,7 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		dir.assets + '/js/main.js'
 		])
+	.pipe(plumber(plumberErrorHandler))
 	.pipe(sourcemaps.init())
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify())
@@ -73,6 +85,7 @@ gulp.task('browser-sync', function() {
  */
 gulp.task('sass', function() {
 	return gulp.src(dir.sass)
+	.pipe(plumber(plumberErrorHandler))
 	.pipe(sourcemaps.init())
 	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions']))
@@ -87,6 +100,7 @@ gulp.task('sass', function() {
  */
  gulp.task('images', function() {
  	return gulp.src(dir.img)
+ 	.pipe(plumber(plumberErrorHandler))
  	.pipe(jimp({
  		sizes: [
  		{"suffix": "960", "width": 960},
