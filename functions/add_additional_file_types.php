@@ -1,5 +1,4 @@
 <?php 
-
 /**
  *
  * Разрешает добавить файлы другого формата
@@ -11,4 +10,3 @@ function my_myme_types($mime_types){
     return $mime_types;
 }
 add_filter('upload_mimes', 'my_myme_types', 1, 1);
-?>

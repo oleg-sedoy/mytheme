@@ -21,4 +21,3 @@ function image_tag($html, $id, $alt, $title) {
 		$html);
 }
 add_filter('get_image_tag', 'image_tag', 0, 4);
-?>

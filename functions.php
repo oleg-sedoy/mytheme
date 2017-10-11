@@ -1,25 +1,25 @@
 <?php
 
-require get_template_directory() . '/functions/add_enqueue.php';
-require get_template_directory() . '/functions/clear_head.php';
-require get_template_directory() . '/functions/remove_wp_embed.php';
-require get_template_directory() . '/functions/custom_logo_admin.php';
-require get_template_directory() . '/functions/disabled_RestApi.php';
-require get_template_directory() . '/functions/remove_page_admin.php';
-require get_template_directory() . '/functions/footer_text_AdminPanel.php';
-require get_template_directory() . '/functions/add_copyright.php';
-require get_template_directory() . '/functions/hide_login_error.php';
-require get_template_directory() . '/functions/text_for_excerpts.php';
-require get_template_directory() . '/functions/disabled_rss_feed.php';
-require get_template_directory() . '/functions/change_excerpt_length.php';
-require get_template_directory() . '/functions/remove_welcome_panel.php';
-require get_template_directory() . '/functions/add_additional_file_types.php';
-require get_template_directory() . '/functions/disable_XML-RPC.php';
-require get_template_directory() . '/functions/post_formats.php';
-require get_template_directory() . '/functions/admin_bar_hide.php';
-require get_template_directory() . '/functions/remove_meta_boxes.php';
-require get_template_directory() . '/functions/unregister_widgets.php'; // Не работает((
-require get_template_directory() . '/functions/automatically_add_dynamic_titles.php';
+require (TEMPLATEPATH . '/functions/add_enqueue.php');
+require (TEMPLATEPATH . '/functions/clear_head.php');
+require (TEMPLATEPATH . '/functions/remove_wp_embed.php');
+require (TEMPLATEPATH . '/functions/custom_logo_admin.php');
+require (TEMPLATEPATH . '/functions/disabled_RestApi.php');
+require (TEMPLATEPATH . '/functions/remove_page_admin.php');
+require (TEMPLATEPATH . '/functions/footer_text_AdminPanel.php');
+require (TEMPLATEPATH . '/functions/add_copyright.php');
+require (TEMPLATEPATH . '/functions/hide_login_error.php');
+require (TEMPLATEPATH . '/functions/text_for_excerpts.php');
+require (TEMPLATEPATH . '/functions/disabled_rss_feed.php');
+require (TEMPLATEPATH . '/functions/change_excerpt_length.php');
+require (TEMPLATEPATH . '/functions/remove_welcome_panel.php');
+require (TEMPLATEPATH . '/functions/add_additional_file_types.php');
+require (TEMPLATEPATH . '/functions/disable_XML-RPC.php');
+require (TEMPLATEPATH . '/functions/post_formats.php');
+require (TEMPLATEPATH . '/functions/admin_bar_hide.php');
+require (TEMPLATEPATH . '/functions/remove_meta_boxes.php');
+require (TEMPLATEPATH . '/functions/unregister_widgets.php'); 
+require (TEMPLATEPATH . '/functions/automatically_add_dynamic_titles.php');
 // require get_template_directory() . '/functions/image_modification.php';
 
 
@@ -104,4 +104,3 @@ function pagination() { // функция вывода пагинации
 		'after_page_number' => '' // строка после цифры
 	));
 }
-?>

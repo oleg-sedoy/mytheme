@@ -21,4 +21,3 @@ function unregister_basic_widgets() {
 	unregister_widget('WP_Widget_Tag_Cloud');        // Облако меток
 	unregister_widget('WP_Nav_Menu_Widget');         // Меню
 }
-?>

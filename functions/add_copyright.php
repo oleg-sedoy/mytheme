@@ -1,5 +1,4 @@
 <?php 
-
 /**
  *
  * Добавляет copyright
@@ -28,4 +27,3 @@ function wpb_copyright() {
 	}
 	return $output;
 }
-?>

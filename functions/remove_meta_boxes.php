@@ -26,4 +26,3 @@
  remove_meta_box( 'authordiv','page','normal' ); // Author Metabox
  }
    add_action('admin_menu','remove_default_page_screen_metaboxes');
-?>

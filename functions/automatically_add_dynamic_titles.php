@@ -1,5 +1,4 @@
 <?php 
-
 /**
  *
  * Автоматический, динамический title
@@ -43,4 +42,3 @@ $longd = __('Enter your longdescription here.', 'texdomainstring');
       echo get_bloginfo('name').' | '.($blog_longd);
 }
 }
-?>
