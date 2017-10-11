@@ -2,10 +2,11 @@
 <h1>Olegmes50</h1>
 <p onclick="openNav()">Меню</p>
 <picture>
-<source srcset="wp-content/themes/mytheme/img/IMG_1716-320.jpg" media="(max-width: 320px)">
-<source srcset="wp-content/themes/mytheme/img/IMG_1716-480.jpg" media="(max-width: 480px)">
-<source srcset="wp-content/themes/mytheme/img/IMG_1716-768.jpg" media="(max-width: 768px)">
-<img srcset="wp-content/themes/mytheme/img/IMG_1716-960.jpg">
+<source srcset="<?php echo get_template_directory_uri(); ?>/img/IMG_1716-320.jpg" media="(max-width: 320px)">
+<source srcset="<?php echo get_template_directory_uri(); ?>/img/IMG_1716-480.jpg" media="(max-width: 480px)">
+<source srcset="<?php echo get_template_directory_uri(); ?>/img/IMG_1716-768.jpg" media="(max-width: 768px)">
+<source srcset="<?php echo get_template_directory_uri(); ?>/img/IMG_1716-992.jpg" media="(max-width: 992px)">
+<img srcset="<?php echo get_template_directory_uri(); ?>/img/IMG_1716-1200.jpg">
 </picture>
 <section>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

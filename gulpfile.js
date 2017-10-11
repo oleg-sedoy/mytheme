@@ -35,10 +35,10 @@
  browserSync     		 = require('browser-sync'),
  sass            		 = require('gulp-sass'),
  autoprefixer    		 = require('gulp-autoprefixer'),
- jimp            		 = require("gulp-jimp-resize"),
+ jimp            		 = require('gulp-jimp-resize'),
  imagemin        		 = require('gulp-imagemin'),
  imageminMozjpeg 		 = require('imagemin-mozjpeg'),
- rename          		 = require("gulp-rename"),
+ rename          		 = require('gulp-rename'),
  cssnano         		 = require('gulp-cssnano'),
  sourcemaps      		 = require('gulp-sourcemaps'),
  plumber 						 = require('gulp-plumber'),
@@ -103,7 +103,8 @@ gulp.task('sass', function() {
  	.pipe(plumber(plumberErrorHandler))
  	.pipe(jimp({
  		sizes: [
- 		{"suffix": "960", "width": 960},
+ 		{"suffix": "1200", "width": 1200},
+ 		{"suffix": "992", "width": 992},
  		{"suffix": "768", "width": 768},
  		{"suffix": "480", "width": 480},
  		{"suffix": "320", "width": 320}
