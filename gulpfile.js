@@ -6,7 +6,7 @@
  *
 */
 
-/*
+/**
  * Project configuration
  */
 	const
@@ -26,7 +26,24 @@
 	  	img: 'assets/img/**/*.*'
 	  }
 
-/*
+/**
+ * browserliat
+ */
+const AUTOPREFIXER_BROWSERS = [
+    'last 2 version',
+    '> 1%',
+    'ie >= 9',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 4',
+    'bb >= 10'
+  ];
+
+/**
  * Include gulp plugins
  */
  var gulp            = require('gulp'),
@@ -45,7 +62,7 @@
  notify 						 = require('gulp-notify'),
  cache           		 = require('gulp-cache');
 
-/*
+/**
  * Plumber confiriration
  */
  var plumberErrorHandler = { errorHandler: notify.onError({
@@ -54,7 +71,7 @@
  })
 };
 
-/*
+/**
  * Create script
  */	
 gulp.task('scripts', function() {
@@ -70,7 +87,7 @@ gulp.task('scripts', function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
-/* 
+/** 
  * Setting browser-syns
  */
 gulp.task('browser-sync', function() {
@@ -80,7 +97,7 @@ gulp.task('browser-sync', function() {
     });
 });
 
-/*
+/**
  * Create sass to css
  */
 gulp.task('sass', function() {
@@ -88,14 +105,14 @@ gulp.task('sass', function() {
 	.pipe(plumber(plumberErrorHandler))
 	.pipe(sourcemaps.init())
 	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-	.pipe(autoprefixer(['last 15 versions']))
+	.pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
 	.pipe(cssnano({}))
 	.pipe(sourcemaps.write('souremaps/'))
 	.pipe(gulp.dest(''))
 	.pipe(browserSync.reload({stream: true}));
 });
 
-/*
+/**
  * Setting imageresize
  */
  gulp.task('images', function() {
@@ -122,7 +139,7 @@ gulp.task('sass', function() {
  	.pipe(gulp.dest('img/'));
  });
 
-/*
+/**
  * Copy fonts to folder themes
  */
 gulp.task('copyfonts', function() {
@@ -130,7 +147,7 @@ gulp.task('copyfonts', function() {
 	.pipe(gulp.dest('fonts/'));
 });
 
-/*
+/**
  * Watch setting
  */
 gulp.task('watch', ['sass','scripts','images','browser-sync'], function() {

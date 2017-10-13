@@ -6,7 +6,7 @@
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<title><?php dynamictitles(); ?></title>
+<title><?php wp_title(); ?></title>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

@@ -12,5 +12,4 @@
 <?php endwhile;  ?>
 <?php previous_post_link('%link', '<- Предыдущий пост: %title', TRUE); ?> 
 <?php next_post_link('%link', 'Следующий пост: %title ->', TRUE); ?> 
-<?php if (comments_open() || get_comments_number()) comments_template('', true); ?>
 </section>

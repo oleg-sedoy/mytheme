@@ -12,5 +12,4 @@
 	else: echo '<h2>Нет записей.</h2>'; endif; // если записей нет, напишим "простите" ?>	 
 	<?php pagination(); // пагинация, функция нах-ся в function.php ?>
 </section>
-<?php get_sidebar(); // подключаем sidebar.php ?>
 <?php get_footer(); // подключаем footer.php ?>

@@ -7,5 +7,4 @@
 	else: echo '<h2>Нет записей.</h2>'; endif; ?>	 
 	<?php pagination(); ?>
 </section>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
