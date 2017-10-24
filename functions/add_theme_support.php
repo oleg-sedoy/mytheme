@@ -1,6 +1,6 @@
 <?php
 /**
- * add new_image_size
+ * include thumbnails
  *
  */
 
