@@ -1,5 +1,5 @@
 <?php get_header(); ?> 
-<h1>Olegmes50</h1>
+<h1>Olegmes50 - MyTemplate for WP</h1>
 <p onclick="openNav()">Мобильное меню</p>
 <picture>
 <source srcset="<?php echo get_template_directory_uri(); ?>/img/IMG_1716-320.jpg" media="(max-width: 320px)">
